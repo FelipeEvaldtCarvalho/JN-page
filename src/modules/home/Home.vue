@@ -1,8 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MainBanner from "./components/MainBanner.vue";
+</script>
 <template>
   <div class="d-flex">
-    <h1>Home</h1>
-    <p>Welcome to the home page!</p>
+    <MainBanner />
   </div>
 </template>
 <style scoped lang="scss"></style>
