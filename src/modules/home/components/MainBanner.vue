@@ -16,7 +16,7 @@ const banners = ref([
   {
     id: "1",
     url: "https://instagram.com",
-    image: "bamboo-watch.jpg",
+    image: "bracelet.jpg",
   },
 ]);
 </script>
