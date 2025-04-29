@@ -22,7 +22,7 @@ const banners = ref([
 </script>
 <template>
   <div class="flex flex-col gap-8 mb-5">
-    <h1 class="font-medium text-3xl">
+    <h1 class="font-medium text-3xl text-center">
       Cupons de desconto em + de 1.224 lojas!
     </h1>
     <Carousel
@@ -34,11 +34,8 @@ const banners = ref([
       <template #item="slotProps">
         <a :href="slotProps.data.url" target="_blank">
           <img
-            class="rounded"
-            :src="
-              'https://primefaces.org/cdn/primevue/images/product/' +
-              slotProps.data.image
-            "
+            class="rounded w-full"
+            :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
           />
         </a>
       </template>
