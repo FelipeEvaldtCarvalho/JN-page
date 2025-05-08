@@ -7,7 +7,7 @@ const couponsLabel = (value: number) => {
 };
 </script>
 <template>
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
     <a
       v-for="coupon in mainCoupons"
       :href="coupon.url"
@@ -16,7 +16,7 @@ const couponsLabel = (value: number) => {
     >
       <Panel
         class="w-full mb-4"
-        pt:root:class="!flex !flex-col !p-4 !gap-4"
+        pt:root:class="!flex !flex-col !p-4 !gap-4 !h-full justify-between"
         pt:header:class="!justify-center !p-0"
         pt:content:class="!p-0"
       >
