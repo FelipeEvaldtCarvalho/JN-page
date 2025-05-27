@@ -1,8 +1,8 @@
 <script setup>
-import Button from "primevue/button";
+import Button from "./Button.vue";
 import { topBanner } from "../texts/topBanner.js";
 
-const { title, description, buttonText, buttonLabel } = topBanner;
+const { title, description, buttonText } = topBanner;
 </script>
 <template>
   <header class="mt-[80px] w-full bg-[#FFE6DB] relative lg:flex lg:min-h-auto">
@@ -20,7 +20,7 @@ const { title, description, buttonText, buttonLabel } = topBanner;
         <p class="lg:text-xl font-bold text-[#445938]">
           {{ buttonText }}
         </p>
-        <Button :label="buttonLabel" icon="pi pi-whatsapp" class="lg:!w-fit" />
+        <Button />
       </div>
       <img
         class="lg:h-[480px] w-[440px]"
