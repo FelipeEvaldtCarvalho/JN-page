@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Button from "primevue/button";
 import { topBanner } from "../texts/topBanner.js";
 

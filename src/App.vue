@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Menu from "./components/Menu.vue";
 import TopBanner from "./components/TopBanner.vue";
 import Text from "./components/Text.vue";

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Drawer from "primevue/drawer";
 import { ref, computed } from "vue";
 import { useMq } from "vue3-mq";
