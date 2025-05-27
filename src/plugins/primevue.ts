@@ -5,17 +5,17 @@ import Aura from "@primeuix/themes/aura";
 export const primevueConfig = definePreset(Aura, {
   semantic: {
     primary: {
-      50: "{orange.50}",
-      100: "{orange.100}",
-      200: "{orange.200}",
-      300: "{orange.300}",
-      400: "{orange.400}",
-      500: "{orange.500}",
-      600: "{orange.600}",
-      700: "{orange.700}",
-      800: "{orange.800}",
-      900: "{orange.900}",
-      950: "{orange.950}",
+      50: "#ecf0ed",
+      100: "#d6ddd7",
+      200: "#b2c3b5",
+      300: "#8fa894",
+      400: "#6d8e72",
+      500: "#445938",
+      600: "#3d5133",
+      700: "#34452b",
+      800: "#2a3823",
+      900: "#202b1b",
+      950: "#171f14",
     },
   },
 });
