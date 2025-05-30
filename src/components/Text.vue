@@ -1,4 +1,5 @@
 <script setup>
+import Button from "./Button.vue";
 defineProps({
   title: {
     type: String,
@@ -8,6 +9,10 @@ defineProps({
     required: true,
   },
   color: {
+    type: Boolean,
+    default: false,
+  },
+  btn: {
     type: Boolean,
     default: false,
   },
@@ -27,6 +32,7 @@ defineProps({
         class="lg:text-xl text-gray-700 leading-relaxed"
         v-html="description"
       />
+      <Button v-if="btn" />
     </div>
   </section>
 </template>

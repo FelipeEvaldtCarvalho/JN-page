@@ -16,3 +16,11 @@ export const whyTrgWorks = {
   <br /><br />
   Ao identificar e modificar padrões inconscientes negativos, a TRG utiliza técnicas específicas de reprogramação mental para transformar reações emocionais e comportamentos automáticos. Isso abre caminho para a libertação de bloqueios do passado, permitindo que você acesse seu potencial real e construa uma vida mais equilibrada e satisfatória.`,
 };
+
+export const sessionInfo = {
+  title: "Como é o atendimento?",
+  color: true,
+  btn: true,
+  description:
+    "Cada sessão tem duração aproximada de 60 minutos e é feita de forma 100% online, através de ligação via vídeo pelo WhatsApp ou Google Meet. Você precisa apenas de um local tranquilo e de conexão à internet em seu dispositivo para que possamos fazer os atendimentos. Os atendimentos são agendados previamente via WhatsApp.",
+};

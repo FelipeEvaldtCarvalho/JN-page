@@ -4,8 +4,9 @@ import TopBanner from "./components/TopBanner.vue";
 import Text from "./components/Text.vue";
 import Video from "./components/Video.vue";
 import About from "./components/About.vue";
+import TrgBenefits from "./components/TrgBenefits.vue";
 
-import { aboutTrg, whyTrgWorks } from "./texts/texts.js";
+import { aboutTrg, whyTrgWorks, sessionInfo } from "./texts/texts.js";
 </script>
 
 <template>
@@ -15,6 +16,8 @@ import { aboutTrg, whyTrgWorks } from "./texts/texts.js";
   <Video />
   <About />
   <Text v-bind="whyTrgWorks" color />
+  <TrgBenefits />
+  <Text v-bind="sessionInfo" />
 </template>
 <style>
 * {
