@@ -17,6 +17,11 @@ export const whyTrgWorks = {
   Ao identificar e modificar padrões inconscientes negativos, a TRG utiliza técnicas específicas de reprogramação mental para transformar reações emocionais e comportamentos automáticos. Isso abre caminho para a libertação de bloqueios do passado, permitindo que você acesse seu potencial real e construa uma vida mais equilibrada e satisfatória.`,
 };
 
+export const final = {
+  description:
+    "Quando você se permite mudar, descobre um poder imenso capaz de transformar sua história e criar novos caminhos de realização.",
+};
+
 export const sessionInfo = {
   title: "Como é o atendimento?",
   color: true,

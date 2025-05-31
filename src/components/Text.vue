@@ -1,6 +1,7 @@
 <script setup>
 import Button from "./Button.vue";
-defineProps({
+import { computed } from "vue";
+const props = defineProps({
   title: {
     type: String,
   },
@@ -17,6 +18,12 @@ defineProps({
     default: false,
   },
 });
+
+const textClass = computed(() => {
+  return props.title
+    ? "lg:text-xl text-gray-700 leading-relaxed"
+    : "text-xl lg:text-3xl leading-relaxed";
+});
 </script>
 <template>
   <section class="text-center px-8 py-15" :class="{ 'bg-[#FFD4C1]': color }">
@@ -28,10 +35,7 @@ defineProps({
         </h2>
         <div class="w-24 h-px bg-gray-400" />
       </div>
-      <p
-        class="lg:text-xl text-gray-700 leading-relaxed"
-        v-html="description"
-      />
+      <p :class="textClass" v-html="description" />
       <Button v-if="btn" />
     </div>
   </section>
