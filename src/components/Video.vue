@@ -55,7 +55,7 @@ onMounted(() => {
       });
     },
     {
-      threshold: 0.3, // só considera "fora da tela" se menos de 30% visível
+      threshold: 0.3,
     }
   );
 

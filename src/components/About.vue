@@ -6,7 +6,11 @@ import Button from "./Button.vue";
     <div
       class="flex flex-col lg:flex-row items-center w-full max-w-[1400px] mx-auto gap-[80px]"
     >
-      <img src="/about.png" alt="Foto da Jaqueline" class="max-w-[390px]" />
+      <img
+        src="/about.png"
+        alt="Foto da Jaqueline"
+        class="max-w-[390px] w-[90%]"
+      />
       <div class="w-full flex flex-col gap-6 lg:gap-10">
         <h1 class="text-gray-800 text-center text-2xl lg:text-4xl">
           Olá, Sou Jaqueline Ferreira da Nova
