@@ -27,5 +27,6 @@ import { aboutTrg, whyTrgWorks, sessionInfo, final } from "./texts/texts.js";
 <style>
 * {
   font-family: "Montserrat", sans-serif;
+  color: #333;
 }
 </style>

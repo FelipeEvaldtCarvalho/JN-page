@@ -17,9 +17,10 @@
       </video>
       <div
         v-if="isMuted"
-        class="absolute top-3 w-[80%] left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2 pointer-events-none text-center"
+        class="absolute top-3 w-[80%] left-1/2 -translate-x-1/2 bg-black/60 !text-white/80 px-3 py-1 rounded-lg text-sm flex items-center gap-2 pointer-events-none text-center"
       >
-        🔇 Vídeo sem som, clique para ativar!
+        <span class="material-icons !text-white/80">volume_off</span>
+        Vídeo sem som, clique para ativar!
       </div>
     </div>
   </div>
