@@ -2,7 +2,7 @@
 import Button from "./Button.vue";
 </script>
 <template>
-  <section class="p-8 my-8">
+  <section class="p-8 my-8" id="sobre-mim">
     <div
       class="flex flex-col lg:flex-row items-center w-full max-w-[1400px] mx-auto gap-[80px]"
     >

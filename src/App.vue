@@ -14,10 +14,10 @@ import { aboutTrg, whyTrgWorks, sessionInfo, final } from "./texts/texts.js";
 <template>
   <Menu />
   <TopBanner />
-  <Text v-bind="aboutTrg" />
+  <Text v-bind="aboutTrg" id="trg" />
   <Video />
   <About />
-  <Text v-bind="whyTrgWorks" color />
+  <Text v-bind="whyTrgWorks" color id="porque-funciona" />
   <TrgBenefits />
   <Text v-bind="sessionInfo" />
   <Testimonials />

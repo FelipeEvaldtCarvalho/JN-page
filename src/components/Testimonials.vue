@@ -23,6 +23,7 @@ const use = computed(() => {
 <template>
   <div
     class="flex flex-col gap-4 w-full max-w-[1400px] mx-auto mt-6 text-center"
+    id="depoimentos"
   >
     <p class="text-2xl lg:text-4xl">Depoimentos</p>
     <p class="lg:text-xl text-gray-700 leading-relaxed">

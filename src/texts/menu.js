@@ -1,7 +1,7 @@
 export const links = [
   {
     label: "Sobre mim",
-    href: "#sobre",
+    href: "#sobre-mim",
   },
   {
     label: "O que é TRG?",
