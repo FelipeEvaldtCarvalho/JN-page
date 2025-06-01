@@ -41,11 +41,11 @@ const visible = ref(false);
     class="!bg-[#FFD4C1]"
   >
     <ul
-      class="flex flex-col gap-6 w-full h-full justify-center items-center text-2xl"
+      class="flex flex-col gap-12 w-full h-full justify-center items-center text-3xl"
     >
       <template v-for="({ label, href }, index) in links" :key="index">
         <li>
-          <a :href="href">{{ label }}</a>
+          <a :href="href" @click="visible = false">{{ label }}</a>
         </li>
       </template>
     </ul>
