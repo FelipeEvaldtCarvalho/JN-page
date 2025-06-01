@@ -13,9 +13,16 @@ const footerText = computed(() => {
 
 <template>
   <section class="text-center px-8 py-15 bg-[#FFD4C1] text-[#32302F]">
-    <div class="w-full max-w-[1400px] mx-auto flex flex-col items-center gap-8">
-      <img src="/footer-logo.png" alt="" />
-      <ul class="hidden lg:flex gap-6 items-center text-lg">
+    <div
+      class="w-full max-w-[1400px] mx-auto flex flex-col items-center gap-8 lg:grid lg:grid-cols-4"
+    >
+      <img
+        src="/footer-logo.png"
+        alt="Jaqueline da Nova - Terapeuta emocional - Logo"
+      />
+      <ul
+        class="hidden lg:flex gap-6 items-center text-lg lg:h-full lg:items-start lg:justify-end lg:col-span-3"
+      >
         <template v-for="({ label, href }, index) in links" :key="index">
           <li>
             <a :href="href" class="relative group inline-block">
@@ -27,7 +34,9 @@ const footerText = computed(() => {
           </li>
         </template>
       </ul>
-      <div class="flex flex-col items-center gap-4">
+      <div
+        class="flex flex-col items-center gap-4 lg:col-span-4 lg:w-fit lg:items-start lg:!text-xl"
+      >
         <a
           class="flex gap-1 items-center cursor-pointer"
           href="https://wa.me/5551984561140"
@@ -45,7 +54,7 @@ const footerText = computed(() => {
           @jaquelinedanova
         </a>
       </div>
-      <p>
+      <p class="lg:col-span-4">
         {{ footerText }}
       </p>
     </div>
