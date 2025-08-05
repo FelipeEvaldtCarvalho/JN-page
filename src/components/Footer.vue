@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { links } from "../texts/menu.js";
+import Logo from "./Logo.vue";
 
 const currentYear = computed(() => {
   return new Date().getFullYear();
@@ -12,23 +13,25 @@ const footerText = computed(() => {
 </script>
 
 <template>
-  <section class="text-center px-8 py-15 bg-[#FFD4C1] text-[#32302F]">
+  <section class="text-center px-8 py-15 bg-[#1d2518] text-[#32302F]">
     <div
       class="w-full max-w-[1400px] mx-auto flex flex-col items-center gap-8 lg:grid lg:grid-cols-4"
     >
-      <img
-        src="/footer-logo.png"
-        alt="Jaqueline da Nova - Terapeuta emocional - Logo"
-      />
+      <div class="flex flex-col items-center lg:items-start lg:col-span-1">
+        <Logo class="h-12 w-fit" color="#FFE6DB" />
+        <p class="!text-[#FFE6DB] text-2xl font-light">Jaqueline</p>
+        <p class="!text-[#FFE6DB] text-2xl font-light">da Nova</p>
+        <p class="!text-[#FFE6DB] text-xs font-light">Terapeuta Emocional</p>
+      </div>
       <ul
-        class="hidden lg:flex gap-6 items-center text-lg lg:h-full lg:items-start lg:justify-end lg:col-span-3"
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center text-base lg:h-full lg:items-start lg:justify-end lg:col-span-3"
       >
         <template v-for="({ label, href }, index) in links" :key="index">
           <li>
-            <a :href="href" class="relative group inline-block">
+            <a :href="href" class="relative group inline-block !text-[#FFE6DB]">
               {{ label }}
               <span
-                class="absolute left-0 bottom-0 w-full h-0.5 bg-[#32302F] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#FFE6DB] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
               ></span>
             </a>
           </li>
@@ -38,23 +41,23 @@ const footerText = computed(() => {
         class="flex flex-col items-center gap-4 lg:col-span-4 lg:w-fit lg:items-start lg:!text-xl"
       >
         <a
-          class="flex gap-1 items-center cursor-pointer"
+          class="flex gap-1 items-center cursor-pointer !text-[#FFE6DB]"
           href="https://wa.me/5551984561140"
           target="_blank"
         >
-          <i class="pi pi-whatsapp" />
+          <i class="pi pi-whatsapp !text-[#FFE6DB]" />
           (51) 984.561.140
         </a>
         <a
-          class="flex gap-1 items-center"
+          class="flex gap-1 items-center cursor-pointer !text-[#FFE6DB]"
           target="_blank"
           href="https://www.instagram.com/jaquelinedanova/"
         >
-          <i class="pi pi-instagram" />
+          <i class="pi pi-instagram !text-[#FFE6DB]" />
           @jaquelinedanova
         </a>
       </div>
-      <p class="lg:col-span-4">
+      <p class="lg:col-span-4 !text-[#FFE6DB]">
         {{ footerText }}
       </p>
     </div>
