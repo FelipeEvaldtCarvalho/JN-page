@@ -5,10 +5,12 @@ import { topBanner } from "../texts/topBanner.js";
 const { title, description, buttonText } = topBanner;
 </script>
 <template>
-  <header class="mt-[80px] w-full bg-[#FFE6DB] relative lg:flex lg:min-h-auto">
-    <img src="/corner.svg" class="absolute z-[1] lg:h-[544px]" />
+  <header
+    class="w-full bg-[#FFE6DB] relative min-h-screen flex items-center justify-center"
+  >
+    <img src="/corner.svg" class="absolute z-[1] lg:h-[100%] top-0 left-0" />
     <div
-      class="z-10 relative p-8 flex flex-col gap-6 items-center lg:flex-row max-w-[1400px] mx-auto"
+      class="z-10 relative p-8 flex flex-col gap-6 items-center lg:flex-row max-w-[1400px] mx-auto mt-20"
     >
       <div class="flex flex-col gap-6 lg:gap-10">
         <p class="text-2xl lg:text-4xl">
