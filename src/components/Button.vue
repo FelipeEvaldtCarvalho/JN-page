@@ -1,17 +1,11 @@
-<script setup>
-import Button from "primevue/button";
-
-const openWhatsApp = () => {
-  window.open("https://wa.me/5551984561140", "_blank");
-};
-</script>
+<script setup></script>
 <template>
-  <Button
-    label="Entre em contato"
-    icon="pi pi-whatsapp"
-    class="w-full lg:!w-fit"
-    pt:icon="!text-white"
-    pt:label="!text-white"
-    @click="openWhatsApp"
-  />
+  <a
+    href="https://wa.me/5551984561140"
+    target="_blank"
+    class="w-full lg:!w-fit flex items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+  >
+    <i class="pi pi-whatsapp !text-white"></i>
+    <span class="!text-white">Entre em contato</span>
+  </a>
 </template>

@@ -7,6 +7,7 @@ import About from "./components/About.vue";
 import TrgBenefits from "./components/TrgBenefits.vue";
 import Testimonials from "./components/Testimonials.vue";
 import Footer from "./components/Footer.vue";
+import WFloat from "./components/WFloat.vue";
 
 import { aboutTrg, whyTrgWorks, sessionInfo, final } from "./texts/texts.js";
 </script>
@@ -23,6 +24,7 @@ import { aboutTrg, whyTrgWorks, sessionInfo, final } from "./texts/texts.js";
   <Testimonials />
   <Text v-bind="final" />
   <Footer />
+  <WFloat />
 </template>
 <style>
 * {
