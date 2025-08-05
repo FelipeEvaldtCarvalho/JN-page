@@ -1,5 +1,6 @@
 <script setup>
 import Drawer from "primevue/drawer";
+import Logo from "./Logo.vue";
 import { ref, computed } from "vue";
 import { useMq } from "vue3-mq";
 import { links } from "../texts/menu.js";
@@ -19,7 +20,7 @@ const visible = ref(false);
     <nav
       class="p-4 flex justify-between items-center w-full max-w-[1400px] mx-auto"
     >
-      <img src="/logo.svg" alt="Logo Jaqueline da Nova" />
+      <Logo class="h-12 w-fit" />
       <ul class="hidden lg:flex gap-6 items-center text-lg">
         <template v-for="({ label, href }, index) in links" :key="index">
           <li>
@@ -42,7 +43,10 @@ const visible = ref(false);
       >
         <span class="!text-white">Agendar</span>
       </a>
-      <i class="pi pi-bars !text-3xl lg:!hidden" @click="visible = true"></i>
+      <i
+        class="pi pi-bars !text-3xl lg:!hidden cursor-pointer"
+        @click="visible = true"
+      ></i>
     </nav>
   </div>
   <Drawer
@@ -51,6 +55,7 @@ const visible = ref(false);
     header=" "
     position="full"
     class="!bg-[#FFD4C1]"
+    blockScroll
   >
     <ul
       class="flex flex-col gap-12 w-full h-full justify-center items-center text-3xl"
