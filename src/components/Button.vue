@@ -3,9 +3,9 @@
   <a
     href="https://wa.me/5551984561140"
     target="_blank"
-    class="w-full lg:!w-fit flex items-center justify-center gap-2 rounded-lg bg-[#445937] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#546e43]"
+    class="w-full lg:!w-fit flex items-center !text-lg justify-center gap-2 rounded-lg bg-[#445937] px-6 py-4 font-semibold text-white transition-colors hover:bg-[#546e43]"
   >
-    <i class="pi pi-whatsapp !text-white"></i>
+    <i class="pi pi-whatsapp !text-white !text-lg"></i>
     <span class="!text-white">Entre em contato</span>
   </a>
 </template>
