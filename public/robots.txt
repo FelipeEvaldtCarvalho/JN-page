@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jaquelinedanova.com.br/sitemap.xml
+
+# Crawl-delay para bots mais agressivos
+Crawl-delay: 1
+
+# Disallow recursos desnecessários para SEO
+Disallow: /src/
+Disallow: /*.js$
+Disallow: /*.css$

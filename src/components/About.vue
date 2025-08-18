@@ -7,19 +7,19 @@ import Button from "./Button.vue";
       class="flex flex-col lg:flex-row items-center w-full max-w-[1400px] mx-auto gap-30 lg:gap-[10%]"
     >
       <div class="w-full flex flex-col gap-6 lg:gap-10">
-        <h1 class="text-gray-800 text-2xl lg:text-4xl">
+        <h2 class="text-gray-800 text-2xl lg:text-4xl font-bold">
           Olá, Sou Jaqueline Ferreira da Nova
-        </h1>
+        </h2>
         <p class="text-gray-700 lg:text-xl leading-relaxed">
-          Sou terapeuta emocional especializada em Terapia de Reprocessamento
-          Generativo (TRG) — uma abordagem profunda e transformadora que auxilia
+          Sou <strong>terapeuta emocional especializada em Terapia de Reprocessamento
+          Generativo (TRG)</strong> — uma abordagem profunda e transformadora que auxilia
           no desbloqueio de padrões emocionais limitantes, promovendo bem-estar
           e autonomia.
         </p>
         <p class="text-gray-700 lg:text-xl leading-relaxed">
           Acredito que cada pessoa carrega dentro de si o potencial para viver
           com mais leveza, autenticidade e propósito. Meu trabalho é oferecer um
-          espaço seguro e acolhedor para que você possa acessar, compreender e
+          <strong>espaço seguro e acolhedor</strong> para que você possa acessar, compreender e
           transformar experiências que ainda impactam sua vida, mesmo que
           inconscientemente.
         </p>
@@ -33,8 +33,9 @@ import Button from "./Button.vue";
       </div>
       <img
         src="/about.png"
-        alt="Foto da Jaqueline"
+        alt="Jaqueline Ferreira da Nova - Terapeuta especializada em TRG, sorrindo em foto profissional"
         class="max-w-[390px] w-[90%]"
+        loading="lazy"
       />
     </div>
   </section>

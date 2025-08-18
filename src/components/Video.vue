@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full p-8">
+  <section class="w-full p-8" aria-label="Vídeo explicativo sobre Terapia TRG">
     <div
       class="relative w-fit h-fit m-auto rounded-2xl border-4 border-[#F7EBE3] p-1 bg-[#F7EBE3]"
     >
@@ -11,19 +11,23 @@
         playsinline
         muted
         @click="toggleMute"
+        aria-label="Vídeo explicativo sobre como funciona a Terapia de Reprocessamento Generativo"
+        preload="metadata"
       >
         <source src="/video.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo HTML5.
+        <p>Seu navegador não suporta vídeo HTML5. <a href="/video.mp4" download>Baixe o vídeo aqui</a>.</p>
       </video>
       <div
         v-if="isMuted"
         class="absolute top-3 w-[80%] left-1/2 -translate-x-1/2 bg-black/60 !text-white/80 px-3 py-1 rounded-lg text-sm flex items-center gap-2 pointer-events-none text-center"
+        role="alert"
+        aria-live="polite"
       >
-        <span class="material-icons !text-white/80">volume_off</span>
+        <span class="material-icons !text-white/80" aria-hidden="true">volume_off</span>
         Vídeo sem som, clique para ativar!
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
