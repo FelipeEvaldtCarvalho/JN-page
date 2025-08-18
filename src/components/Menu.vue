@@ -12,6 +12,27 @@ const isMobile = computed(() => {
 const mq = useMq();
 
 const visible = ref(false);
+
+const smoothScroll = (event, href) => {
+  event.preventDefault();
+  
+  const targetId = href.substring(1);
+  const targetElement = document.getElementById(targetId);
+  
+  if (targetElement) {
+    const headerHeight = 80;
+    const targetPosition = targetElement.offsetTop - headerHeight;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+  
+  if (visible.value) {
+    visible.value = false;
+  }
+};
 </script>
 <template>
   <header
@@ -29,6 +50,7 @@ const visible = ref(false);
           <li role="none">
             <a
               :href="href"
+              @click="smoothScroll($event, href)"
               class="relative group inline-block !text-[#445937] text-base font-semibold"
               role="menuitem"
               :aria-label="`Navegar para seção ${label}`"
@@ -81,7 +103,7 @@ const visible = ref(false);
           <li role="none">
             <a 
               :href="href" 
-              @click="visible = false"
+              @click="smoothScroll($event, href)"
               role="menuitem"
               :aria-label="`Navegar para seção ${label}`"
             >{{ label }}</a>
