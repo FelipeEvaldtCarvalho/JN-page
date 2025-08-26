@@ -26,6 +26,18 @@ const footerText = computed(() => {
       <ul
         class="hidden lg:flex flex-col lg:flex-row gap-6 items-center text-base lg:h-full lg:items-start lg:justify-end lg:col-span-3"
       >
+        <li>
+          <router-link
+            to="/"
+            class="relative group inline-block !text-[#FFE6DB]"
+          >
+            Início
+            <span
+              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#FFE6DB] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            ></span>
+          </router-link>
+        </li>
+
         <template v-for="({ label, href }, index) in links" :key="index">
           <li>
             <a :href="href" class="relative group inline-block !text-[#FFE6DB]">
@@ -36,6 +48,17 @@ const footerText = computed(() => {
             </a>
           </li>
         </template>
+        <li>
+          <router-link
+            to="/blog"
+            class="relative group inline-block !text-[#FFE6DB]"
+          >
+            Blog
+            <span
+              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#FFE6DB] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            ></span>
+          </router-link>
+        </li>
       </ul>
       <div
         class="flex flex-col items-center gap-4 lg:col-span-4 lg:w-fit lg:items-start lg:!text-xl"

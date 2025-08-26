@@ -15,20 +15,26 @@ const visible = ref(false);
 
 const smoothScroll = (event, href) => {
   event.preventDefault();
-  
+
   const targetId = href.substring(1);
   const targetElement = document.getElementById(targetId);
-  
+
   if (targetElement) {
     const headerHeight = 80;
     const targetPosition = targetElement.offsetTop - headerHeight;
-    
+
     window.scrollTo({
       top: targetPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
-  
+
+  if (visible.value) {
+    visible.value = false;
+  }
+};
+
+const navigateToPage = () => {
   if (visible.value) {
     visible.value = false;
   }
@@ -46,8 +52,25 @@ const smoothScroll = (event, href) => {
     >
       <Logo class="h-12 w-fit" />
       <ul class="hidden lg:flex gap-6 items-center text-lg" role="menubar">
+        <li role="none">
+          <router-link
+            to="/"
+            @click="navigateToPage"
+            class="relative group inline-block !text-[#445937] text-base font-semibold"
+            active-class="!text-[#2d4a21] font-bold"
+            role="menuitem"
+            aria-label="Ir para página inicial"
+          >
+            Início
+            <span
+              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#445937] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+              aria-hidden="true"
+            ></span>
+          </router-link>
+        </li>
+
         <template v-for="({ label, href }, index) in links" :key="index">
-          <li role="none">
+          <li role="none" v-if="$route.name === 'Home'">
             <a
               :href="href"
               @click="smoothScroll($event, href)"
@@ -63,6 +86,23 @@ const smoothScroll = (event, href) => {
             </a>
           </li>
         </template>
+
+        <li role="none">
+          <router-link
+            to="/blog"
+            @click="navigateToPage"
+            class="relative group inline-block !text-[#445937] text-base font-semibold"
+            active-class="!text-[#2d4a21] font-bold"
+            role="menuitem"
+            aria-label="Ir para o blog"
+          >
+            Blog
+            <span
+              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#445937] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+              aria-hidden="true"
+            ></span>
+          </router-link>
+        </li>
       </ul>
       <a
         href="https://wa.me/5551984561140"
@@ -99,16 +139,39 @@ const smoothScroll = (event, href) => {
         class="flex flex-col gap-12 w-full h-full justify-center items-center text-3xl"
         role="menu"
       >
+        <li role="none">
+          <router-link
+            to="/"
+            @click="navigateToPage"
+            role="menuitem"
+            aria-label="Ir para página inicial"
+          >
+            Início
+          </router-link>
+        </li>
+
         <template v-for="({ label, href }, index) in links" :key="index">
-          <li role="none">
-            <a 
-              :href="href" 
+          <li role="none" v-if="$route.name === 'Home'">
+            <a
+              :href="href"
               @click="smoothScroll($event, href)"
               role="menuitem"
               :aria-label="`Navegar para seção ${label}`"
-            >{{ label }}</a>
+              >{{ label }}</a
+            >
           </li>
         </template>
+
+        <li role="none">
+          <router-link
+            to="/blog"
+            @click="navigateToPage"
+            role="menuitem"
+            aria-label="Ir para o blog"
+          >
+            Blog
+          </router-link>
+        </li>
       </ul>
     </nav>
   </Drawer>
