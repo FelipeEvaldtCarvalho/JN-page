@@ -2,6 +2,10 @@
 import { computed } from "vue";
 import { links } from "../texts/menu.js";
 import Logo from "./Logo.vue";
+import { isFeatureEnabled } from "../config/featureFlags.js";
+
+// Feature flags
+const isBlogEnabled = isFeatureEnabled('BLOG_ENABLED');
 
 const currentYear = computed(() => {
   return new Date().getFullYear();
@@ -48,7 +52,7 @@ const footerText = computed(() => {
             </a>
           </li>
         </template>
-        <li>
+        <li v-if="isBlogEnabled">
           <router-link
             to="/blog"
             class="relative group inline-block !text-[#FFE6DB]"

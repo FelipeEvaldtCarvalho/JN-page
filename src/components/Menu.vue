@@ -4,6 +4,7 @@ import Logo from "./Logo.vue";
 import { ref, computed } from "vue";
 import { useMq } from "vue3-mq";
 import { links } from "../texts/menu.js";
+import { isFeatureEnabled } from "../config/featureFlags.js";
 
 const isMobile = computed(() => {
   const mobileSizes = ["sm", "xs", "md"];
@@ -12,6 +13,9 @@ const isMobile = computed(() => {
 const mq = useMq();
 
 const visible = ref(false);
+
+// Feature flags
+const isBlogEnabled = isFeatureEnabled('BLOG_ENABLED');
 
 const smoothScroll = (event, href) => {
   event.preventDefault();
@@ -87,7 +91,7 @@ const navigateToPage = () => {
           </li>
         </template>
 
-        <li role="none">
+        <li role="none" v-if="isBlogEnabled">
           <router-link
             to="/blog"
             @click="navigateToPage"
@@ -162,7 +166,7 @@ const navigateToPage = () => {
           </li>
         </template>
 
-        <li role="none">
+        <li role="none" v-if="isBlogEnabled">
           <router-link
             to="/blog"
             @click="navigateToPage"
