@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -132,6 +132,22 @@
       gtag("config", "AW-10880976344");
     </script>
 
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-10880976344/iM3ZCJLrkrEDENiLusQo",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -146,23 +162,6 @@
       })(window, document, "script", "dataLayer", "GTM-W33MP4Q5");
     </script>
     <!-- End Google Tag Manager -->
-    <!-- Event snippet for Website traffic conversion page
-    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-10880976344/iM3ZCJLrkrEDENiLusQo',
-          'event_callback': callback
-      });
-      return false;
-    }
-    window.gtag_report_conversion = gtag_report_conversion
-    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
