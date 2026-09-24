@@ -1,182 +1,40 @@
 <script setup>
-import Drawer from "primevue/drawer";
 import Logo from "./Logo.vue";
-import { ref, computed } from "vue";
-import { useMq } from "vue3-mq";
 import { links } from "../texts/menu.js";
-import { isFeatureEnabled } from "../config/featureFlags.js";
-
-const isMobile = computed(() => {
-  const mobileSizes = ["sm", "xs", "md"];
-  return mobileSizes.includes(mq["current"]);
-});
-const mq = useMq();
-
-const visible = ref(false);
-
-// Feature flags
-const isBlogEnabled = isFeatureEnabled('BLOG_ENABLED');
-
-const smoothScroll = (event, href) => {
-  event.preventDefault();
-
-  const targetId = href.substring(1);
-  const targetElement = document.getElementById(targetId);
-
-  if (targetElement) {
-    const headerHeight = 80;
-    const targetPosition = targetElement.offsetTop - headerHeight;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-
-  if (visible.value) {
-    visible.value = false;
-  }
-};
-
-const navigateToPage = () => {
-  if (visible.value) {
-    visible.value = false;
-  }
-};
 </script>
+
 <template>
   <header
-    class="flex w-full fixed top-0 left-0 z-30 text-[#32302F] bg-[#FFD4C1]/30 backdrop-blur-md border border-white/30 shadow-md shadow-white/20"
-    role="banner"
+    class="sticky top-0 z-30 border-b border-wine/10 bg-cream/90 backdrop-blur-md"
   >
-    <nav
-      class="p-4 flex justify-between items-center w-full max-w-[1400px] mx-auto"
-      role="navigation"
-      aria-label="Menu principal"
-    >
-      <Logo class="h-12 w-fit" />
-      <ul class="hidden lg:flex gap-6 items-center text-lg" role="menubar">
-        <li role="none">
-          <router-link
-            to="/"
-            @click="navigateToPage"
-            class="relative group inline-block !text-[#445937] text-base font-semibold"
-            active-class="!text-[#2d4a21] font-bold"
-            role="menuitem"
-            aria-label="Ir para página inicial"
-          >
-            Início
-            <span
-              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#445937] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-              aria-hidden="true"
-            ></span>
-          </router-link>
-        </li>
-
-        <template v-for="({ label, href }, index) in links" :key="index">
-          <li role="none" v-if="$route.name === 'Home'">
-            <a
-              :href="href"
-              @click="smoothScroll($event, href)"
-              class="relative group inline-block !text-[#445937] text-base font-semibold"
-              role="menuitem"
-              :aria-label="`Navegar para seção ${label}`"
-            >
-              {{ label }}
-              <span
-                class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#445937] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                aria-hidden="true"
-              ></span>
-            </a>
-          </li>
-        </template>
-
-        <li role="none" v-if="isBlogEnabled">
-          <router-link
-            to="/blog"
-            @click="navigateToPage"
-            class="relative group inline-block !text-[#445937] text-base font-semibold"
-            active-class="!text-[#2d4a21] font-bold"
-            role="menuitem"
-            aria-label="Ir para o blog"
-          >
-            Blog
-            <span
-              class="absolute left-0 -bottom-1 w-full h-0.5 bg-[#445937] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-              aria-hidden="true"
-            ></span>
-          </router-link>
-        </li>
-      </ul>
-      <a
-        href="https://wa.me/5551984561140"
-        target="_blank"
-        rel="noopener"
-        class="w-fit flex items-center justify-center gap-2 rounded-lg bg-[#445937] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#546e43]"
-        aria-label="Agendar consulta via WhatsApp"
+    <div class="wrap flex h-[72px] items-center justify-between gap-4">
+      <router-link
+        to="/"
+        class="flex min-w-0 items-center gap-2 sm:gap-3"
+        aria-label="Jaqueline da Nova, Terapia de casal"
       >
-        <span class="!text-white">Agendar</span>
-      </a>
-      <button
-        class="pi pi-bars !text-3xl lg:!hidden cursor-pointer"
-        @click="visible = true"
-        aria-label="Abrir menu de navegação"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      ></button>
-    </nav>
+        <Logo class="h-5 w-auto shrink-0 sm:h-6" />
+        <span class="leading-tight">
+          <span class="block whitespace-nowrap font-brand text-[17px] text-ink sm:text-xl">Jaqueline da Nova</span>
+          <span class="block text-[11px] tracking-wide text-blush">
+            Terapia de casal
+          </span>
+        </span>
+      </router-link>
+      <nav
+        class="hidden gap-6 text-sm text-muted md:flex"
+        aria-label="Menu principal"
+      >
+        <a
+          v-for="{ label, href } in links"
+          :key="href"
+          :href="href"
+          class="transition-colors hover:text-wine"
+        >
+          {{ label }}
+        </a>
+      </nav>
+      <a class="btn shrink-0 whitespace-nowrap !px-4 !py-2.5 text-[13px] sm:!px-5 sm:text-sm" href="#contato">Conhecer o ELO</a>
+    </div>
   </header>
-  <Drawer
-    v-if="isMobile"
-    v-model:visible="visible"
-    header=" "
-    position="full"
-    class="!bg-[#FFD4C1]"
-    blockScroll
-    id="mobile-menu"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Menu de navegação móvel"
-  >
-    <nav role="navigation" aria-label="Menu móvel">
-      <ul
-        class="flex flex-col gap-12 w-full h-full justify-center items-center text-3xl"
-        role="menu"
-      >
-        <li role="none">
-          <router-link
-            to="/"
-            @click="navigateToPage"
-            role="menuitem"
-            aria-label="Ir para página inicial"
-          >
-            Início
-          </router-link>
-        </li>
-
-        <template v-for="({ label, href }, index) in links" :key="index">
-          <li role="none" v-if="$route.name === 'Home'">
-            <a
-              :href="href"
-              @click="smoothScroll($event, href)"
-              role="menuitem"
-              :aria-label="`Navegar para seção ${label}`"
-              >{{ label }}</a
-            >
-          </li>
-        </template>
-
-        <li role="none" v-if="isBlogEnabled">
-          <router-link
-            to="/blog"
-            @click="navigateToPage"
-            role="menuitem"
-            aria-label="Ir para o blog"
-          >
-            Blog
-          </router-link>
-        </li>
-      </ul>
-    </nav>
-  </Drawer>
 </template>

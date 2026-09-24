@@ -1,18 +1,14 @@
 export const links = [
   {
-    label: "Sobre mim",
-    href: "#sobre-mim",
+    label: "Jornada",
+    href: "#jornada",
   },
   {
-    label: "O que é TRG?",
-    href: "#trg",
+    label: "Etapas",
+    href: "#etapas",
   },
   {
-    label: "Porque funciona?",
-    href: "#porque-funciona",
-  },
-  {
-    label: "Depoimentos",
-    href: "#depoimentos",
+    label: "Investimento",
+    href: "#investimento",
   },
 ];

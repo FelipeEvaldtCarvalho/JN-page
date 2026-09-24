@@ -1,10 +1,15 @@
-<script setup></script>
+<script setup>
+import { whatsappUrl, reportConversion } from "../texts/contact.js";
+</script>
 <template>
   <a
-    href="https://wa.me/5551984561140"
+    :href="whatsappUrl()"
     target="_blank"
-    class="fixed bottom-3 right-3 bg-[#445937] h-11 w-11 md:h-16 md:w-16 rounded-full aspect-square flex items-center justify-center z-50 hover:scale-110 transition-transform border-1 border-white shadow-lg shadow-white/20"
+    rel="noopener"
+    @click="reportConversion"
+    class="fixed bottom-3 right-3 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-wine shadow-lg transition-transform hover:scale-110 md:h-16 md:w-16"
+    aria-label="Falar pelo WhatsApp"
   >
-    <i class="pi pi-whatsapp !text-white !text-2xl md:!text-4xl"></i>
+    <i class="pi pi-whatsapp !text-2xl text-white md:!text-4xl"></i>
   </a>
 </template>
