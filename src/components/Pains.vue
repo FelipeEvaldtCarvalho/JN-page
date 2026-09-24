@@ -4,7 +4,7 @@ import { pains } from "../texts/elo.js";
 
 <template>
   <section id="jornada" class="py-16 md:py-24">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div class="eyebrow">Antes de pensar em quem está certo</div>
       <h2 class="section-title">
         Talvez vocês não tenham perdido a relação. Talvez tenham perdido a forma

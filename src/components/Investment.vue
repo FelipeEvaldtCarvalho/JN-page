@@ -1,6 +1,10 @@
+<script setup>
+import { included } from "../texts/elo.js";
+</script>
+
 <template>
   <section id="investimento" class="bg-white py-16 md:py-24">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div
         class="grid gap-12 rounded-[32px] bg-gradient-to-br from-deep to-wine p-8 text-white md:p-12 lg:grid-cols-[1fr_0.55fr]"
       >
@@ -14,6 +18,16 @@
             21 sessões + 1 acompanhamento estratégico. 100% online. Jornada
             personalizada.
           </p>
+          <ul class="mt-6 grid gap-2.5">
+            <li
+              v-for="item in included"
+              :key="item"
+              class="flex items-start gap-3 text-[#f4e6e8]"
+            >
+              <i class="pi pi-check mt-1 text-sm text-champ" aria-hidden="true" />
+              {{ item }}
+            </li>
+          </ul>
         </div>
         <div class="self-center">
           <small

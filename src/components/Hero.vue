@@ -28,11 +28,11 @@ import Logo from "./Logo.vue";
           mesmos conflitos, da distância e dos ciclos que se repetem, e que
           querem construir uma nova forma de se relacionar.
         </p>
-        <div class="mt-7 flex flex-wrap gap-3">
-          <a class="btn w-full text-center sm:w-auto" href="#contato">
+        <div class="mt-7 hidden flex-wrap gap-3 sm:flex">
+          <a class="btn" href="#contato">
             Quero saber se o ELO é para nós
           </a>
-          <a class="btn btn-outline w-full text-center sm:w-auto" href="#jornada">
+          <a class="btn btn-outline" href="#jornada">
             Conhecer a jornada
           </a>
         </div>

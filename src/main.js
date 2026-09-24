@@ -6,6 +6,7 @@ import PrimeVue, { primevueConfig } from "./plugins/primevue";
 import "./style.css";
 import "primeicons/primeicons.css";
 import { debugFeatureFlags, featureFlags } from "./config/featureFlags.js";
+import { reveal } from "./directives/reveal.js";
 
 // Debug das feature flags no console (baseado na variável de ambiente)
 if (featureFlags.DEBUG_MODE) {
@@ -14,6 +15,7 @@ if (featureFlags.DEBUG_MODE) {
 
 const app = createApp(App);
 app.use(router);
+app.directive("reveal", reveal);
 app.use(PrimeVue, {
   theme: {
     preset: primevueConfig,

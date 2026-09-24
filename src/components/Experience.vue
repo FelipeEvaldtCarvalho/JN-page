@@ -4,7 +4,7 @@ import { experience } from "../texts/elo.js";
 
 <template>
   <section class="bg-deep py-16 md:py-24 text-white">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div class="eyebrow !text-champ">A experiência</div>
       <h2 class="section-title !text-white">
         Vocês não recebem apenas sessões. Vivenciam um processo.

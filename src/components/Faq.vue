@@ -4,7 +4,7 @@ import { faq } from "../texts/elo.js";
 
 <template>
   <section class="py-16 md:py-24">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div class="text-center">
         <div class="eyebrow">Antes de começar</div>
         <h2 class="section-title">O que vocês precisam saber</h2>

@@ -19,28 +19,28 @@ export const cycle = ["Eu sinto", "Você entende", "Você reage", "Eu reajo"];
 
 export const stages = [
   {
-    num: "01 · EU",
+    tag: "EU",
     title: "RAÍZES",
     focus: "Minha história · necessidades · feridas",
     text: "Seis sessões individuais para cada parceiro. Um olhar para o que cada um aprendeu sobre amor, segurança, conflito e vínculo.",
     count: "6 + 6 sessões individuais",
   },
   {
-    num: "02 · NÓS",
+    tag: "NÓS",
     title: "ENCONTRO",
     focus: "Gatilhos · reações · ciclo",
     text: "Seis encontros com o casal para compreender o que acontece entre vocês e trabalhar os pontos que sustentam o ciclo.",
     count: "6 sessões conjuntas",
   },
   {
-    num: "03 · COMO FUNCIONAMOS",
+    tag: "COMO FUNCIONAMOS",
     title: "SINTONIA",
     focus: "Comunicar · ouvir · negociar · conectar",
     text: "Duas sessões práticas para transformar compreensão em novos comportamentos e acordos possíveis.",
     count: "2 sessões conjuntas",
   },
   {
-    num: "04 · PARA ONDE VAMOS",
+    tag: "PARA ONDE VAMOS",
     title: "HORIZONTE",
     focus: "Sonhos · planos · projetos · experiências",
     text: "Uma sessão para olhar além do que precisa ser resolvido e definir o que vocês querem construir e viver juntos.",
@@ -104,5 +104,48 @@ export const faq = [
     question: "É indicado para qualquer casal?",
     answer:
       "Antes de iniciar, existe uma conversa de alinhamento para verificar se a proposta é adequada. Situações envolvendo violência, ameaça, medo ou coerção exigem avaliação específica e podem não ser compatíveis com um processo conjunto.",
+  },
+];
+
+export const journeySummary = [
+  { value: "12", label: "sessões individuais" },
+  { value: "9", label: "sessões conjuntas" },
+  { value: "1", label: "acompanhamento estratégico" },
+  { value: "3,5 a 4", label: "meses de jornada" },
+];
+
+export const included = [
+  "Conversa de alinhamento com o casal antes de começar",
+  "6 sessões individuais para cada parceiro",
+  "9 sessões conjuntas nas etapas Encontro, Sintonia e Horizonte",
+  "1 acompanhamento estratégico depois da jornada",
+  "Sessões semanais, 100% online",
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Foi a primeira vez que conseguimos olhar para a nossa história sem transformar tudo em culpa. Isso mudou completamente a forma como começamos a nos relacionar.",
+    author: "Juntos há 9 anos",
+  },
+  {
+    quote:
+      "Eu queria que ele mudasse. No processo, entendi o que acontecia comigo, com ele e entre nós. Foi aí que nossa relação começou a mudar.",
+    author: "Juntos há 4 anos",
+  },
+  {
+    quote:
+      "A gente entrou tentando salvar o relacionamento. Saiu entendendo como construir um relacionamento diferente.",
+    author: "Juntos há 15 anos",
+  },
+  {
+    quote:
+      "Começamos procurando ajuda porque estávamos cansados dos mesmos conflitos. O processo nos fez olhar para a nossa relação de uma forma completamente diferente.",
+    author: "Juntos há 7 anos",
+  },
+  {
+    quote:
+      "Eu achava que nosso problema era falta de comunicação. Descobri que existiam muitas coisas por trás das nossas brigas que nunca tínhamos conseguido enxergar.",
+    author: "Juntos há 12 anos",
   },
 ];

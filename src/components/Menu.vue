@@ -34,7 +34,7 @@ import { links } from "../texts/menu.js";
           {{ label }}
         </a>
       </nav>
-      <a class="btn shrink-0 whitespace-nowrap !px-4 !py-2.5 text-[13px] sm:!px-5 sm:text-sm" href="#contato">Conhecer o ELO</a>
+      <a class="btn hidden shrink-0 whitespace-nowrap !px-5 !py-2.5 text-sm sm:inline-block" href="#contato">Conhecer o ELO</a>
     </div>
   </header>
 </template>

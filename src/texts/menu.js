@@ -8,6 +8,10 @@ export const links = [
     href: "#etapas",
   },
   {
+    label: "Sobre",
+    href: "#sobre",
+  },
+  {
     label: "Investimento",
     href: "#investimento",
   },

@@ -4,7 +4,7 @@ import { outcomes } from "../texts/elo.js";
 
 <template>
   <section class="py-16 md:py-24">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div class="eyebrow">O que vocês podem construir</div>
       <h2 class="section-title">O objetivo não é voltar ao que vocês eram.</h2>
       <p class="text-muted">

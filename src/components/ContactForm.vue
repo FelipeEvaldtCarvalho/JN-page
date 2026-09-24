@@ -22,6 +22,18 @@ const fields = [
 
 const sent = ref(false);
 
+const maskPhone = (value) => {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length <= 2) return digits.replace(/^(\d{0,2})/, "($1");
+  if (digits.length <= 7) return digits.replace(/^(\d{2})(\d+)/, "($1) $2");
+  return digits.replace(/^(\d{2})(\d{5})(\d+)/, "($1) $2-$3");
+};
+
+const onInput = (field, event) => {
+  if (field.type !== "tel") return;
+  form[field.key] = maskPhone(event.target.value);
+};
+
 const submit = () => {
   const lines = [
     "Olá, Jaqueline! Queremos saber se o ELO faz sentido para nós.",
@@ -39,7 +51,7 @@ const submit = () => {
 
 <template>
   <section id="contato" class="bg-rose py-16 md:py-24 text-center">
-    <div class="wrap">
+    <div v-reveal class="wrap">
       <div class="eyebrow">Próximo passo</div>
       <h2 class="section-title mx-auto max-w-[850px]">
         Se vocês chegaram até aqui, talvez esteja na hora de olhar para a
@@ -71,6 +83,10 @@ const submit = () => {
             v-model="form[field.key]"
             :type="field.type || 'text'"
             :required="field.required"
+            :inputmode="field.type === 'tel' ? 'tel' : undefined"
+            :placeholder="field.type === 'tel' ? '(51) 99999-9999' : undefined"
+            :pattern="field.type === 'tel' ? '\\(\\d{2}\\) \\d{4,5}-\\d{4}' : undefined"
+            @input="onInput(field, $event)"
             class="field"
           />
         </label>
@@ -80,6 +96,10 @@ const submit = () => {
         >
           Quero saber se o ELO faz sentido para nós
         </button>
+        <p class="flex items-center justify-center gap-2 text-center text-xs text-muted sm:col-span-2">
+          <i class="pi pi-lock text-xs" aria-hidden="true" />
+          As respostas vão direto para o WhatsApp da Jaqueline. Mais ninguém tem acesso.
+        </p>
         <p
           v-if="sent"
           class="text-center text-sm font-semibold text-wine sm:col-span-2"
