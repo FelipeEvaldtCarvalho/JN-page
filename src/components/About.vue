@@ -10,15 +10,15 @@
           aria-hidden="true"
         />
         <div
-          class="blob relative aspect-[4/5] overflow-hidden bg-[#d9d5d0] shadow-[0_30px_60px_-25px_rgba(72,21,34,0.4)] [animation-delay:-5s]"
+          class="blob relative aspect-[4/5] overflow-hidden bg-warm shadow-[0_30px_60px_-25px_rgba(72,21,34,0.4)] [animation-delay:-5s]"
         >
           <img
-            src="/about.png"
+            src="/jaqueline.jpg"
             alt="Jaqueline da Nova, terapeuta de casal"
-            class="h-full w-full scale-[1.2] object-cover object-[50%_35%]"
+            class="h-full w-full object-cover object-[50%_30%]"
             loading="lazy"
-            width="394"
-            height="530"
+            width="800"
+            height="1066"
           />
         </div>
       </div>
