@@ -38,7 +38,7 @@ import { included } from "../texts/elo.js";
           <div class="font-serif text-[3.5rem] leading-tight md:text-[4.5rem]">
             R$ 3.290
           </div>
-          <p class="mb-6 text-[#eadde0]">À vista ou no cartão de crédito.</p>
+          <p class="mb-6 text-[#eadde0]">À vista ou parcelado em até 10× de R$ 417,74.</p>
           <a class="btn btn-light" href="#contato">Quero conhecer o ELO</a>
         </div>
       </div>
