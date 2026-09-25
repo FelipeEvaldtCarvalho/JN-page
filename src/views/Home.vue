@@ -14,9 +14,6 @@ import ContactForm from "../components/ContactForm.vue";
 import Footer from "../components/Footer.vue";
 import WFloat from "../components/WFloat.vue";
 import MobileCta from "../components/MobileCta.vue";
-import { isFeatureEnabled } from "../config/featureFlags.js";
-
-const showTestimonials = isFeatureEnabled("TESTIMONIALS_ENABLED");
 </script>
 
 <template>
@@ -29,7 +26,7 @@ const showTestimonials = isFeatureEnabled("TESTIMONIALS_ENABLED");
     <Experience />
     <Outcomes />
     <About />
-    <Testimonials v-if="showTestimonials" />
+    <Testimonials />
     <Investment />
     <Faq />
     <ContactForm />

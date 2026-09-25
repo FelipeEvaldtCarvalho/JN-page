@@ -34,12 +34,6 @@ export const featureFlags = {
     false
   ),
 
-  // Depoimentos: só liga em produção quando houver depoimentos reais
-  TESTIMONIALS_ENABLED: envToBoolean(
-    import.meta.env.VITE_TESTIMONIALS_ENABLED,
-    import.meta.env.DEV
-  ),
-
   // Debug mode
   DEBUG_MODE: envToBoolean(
     import.meta.env.VITE_DEBUG_MODE,
